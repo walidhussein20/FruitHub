@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruites_e_commerce/core/utils/app_text_styles.dart';
+import 'package:fruites_e_commerce/features/auth/presentation/views/login_view.dart';
 
 class OnBoardingPageViewItems extends StatelessWidget {
   const OnBoardingPageViewItems(
@@ -8,10 +10,12 @@ class OnBoardingPageViewItems extends StatelessWidget {
       required this.backGroundImage,
       required this.subtitle,
       required this.title,
-      this.color});
+      this.color,
+      required this.isSkip});
   final String image, backGroundImage, subtitle;
   final Widget title;
   final Color? color;
+  final bool isSkip;
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +39,23 @@ class OnBoardingPageViewItems extends StatelessWidget {
                 left: 0,
                 child: SvgPicture.asset(image),
               ),
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text('تخط'),
+              Visibility(
+                visible: isSkip,
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(LoginView.routeName);
+                    },
+                    child: Text(
+                      'تخط',
+                      style: TextStyles.regular13.copyWith(
+                        color: Color(0xff949D9E),
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
@@ -50,10 +68,13 @@ class OnBoardingPageViewItems extends StatelessWidget {
           height: 24,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 37),
           child: Text(
             subtitle,
             textAlign: TextAlign.center,
+            style: TextStyles.semiBold13.copyWith(
+              color: Color(0xff4E5556),
+            ),
           ),
         )
       ],
