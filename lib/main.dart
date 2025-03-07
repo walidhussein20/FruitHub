@@ -4,10 +4,10 @@ import 'package:fruites_e_commerce/core/helper_functions/on_generate_routes.dart
 import 'package:fruites_e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:fruites_e_commerce/features/splash/presentation/views/splash_view.dart';
 import 'package:fruites_e_commerce/generated/l10n.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-  await SharedPreferencesSingleton.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Prefs.init();
   runApp(const FruitHub());
 }
 

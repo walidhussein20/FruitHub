@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:fruites_e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:fruites_e_commerce/core/utils/app_colors.dart';
 import 'package:fruites_e_commerce/core/widgets/custom_botton.dart';
 import 'package:fruites_e_commerce/features/auth/presentation/views/login_view.dart';
@@ -61,6 +62,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: CustomBotton(
               onPressed: () {
+                Prefs.setBool('isOnboardingSeen', true);
                 Navigator.of(context).pushReplacementNamed(LoginView.routeName);
               },
               text: 'ابدأ الان',
