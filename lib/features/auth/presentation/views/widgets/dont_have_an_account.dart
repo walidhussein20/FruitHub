@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruites_e_commerce/core/utils/app_text_styles.dart';
+import 'package:fruites_e_commerce/features/auth/presentation/views/signup_view.dart';
 
 class DontHaveAnAccountWidget extends StatelessWidget {
   const DontHaveAnAccountWidget({super.key});
@@ -16,7 +17,9 @@ class DontHaveAnAccountWidget extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, SignUpView.routeName);
+          },
           child: Text('قم بإنشاء حساب', style: TextStyles.semiBold16),
         ),
       ],
