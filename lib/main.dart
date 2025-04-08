@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruites_e_commerce/core/helper_functions/on_generate_routes.dart';
+import 'package:fruites_e_commerce/core/services/get_it_services.dart';
 import 'package:fruites_e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:fruites_e_commerce/core/utils/app_colors.dart';
 import 'package:fruites_e_commerce/features/splash/presentation/views/splash_view.dart';
@@ -14,6 +15,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Prefs.init();
+  setupGetit();
   runApp(const FruitHub());
 }
 
