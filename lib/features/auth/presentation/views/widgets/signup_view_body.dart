@@ -76,9 +76,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                       buildErrorBar(context, 'يجب قبول الشروط والأحكام');
                     }
                   } else {
-                    setState(() {
-                      autovalidateMode = AutovalidateMode.always;
-                    });
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
                   }
                 },
                 text: 'إنشاء حساب جديد',

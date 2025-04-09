@@ -31,4 +31,30 @@ class FirebaseAuthServices {
           message: 'فشل إنشاء المستخدم، يرجى المحاولة مرة أخرى');
     }
   }
+
+  Future<User> signInWithEmailAndPassword(
+      {required String email, required String password}) async {
+    try {
+      final credential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      return credential.user!;
+    } on FirebaseAuthException catch (e) {
+      log('Exception in firebaseAuthServices.signInWithEmailAndPassword: $e and code is ${e.code}');
+      if (e.code == 'user-not-found') {
+        throw CustomException(
+            message: 'كلمة المرور او البريد الإلكتروني غير صحيحة');
+      } else if (e.code == 'wrong-password') {
+        throw CustomException(
+            message: 'كلمة المرور او البريد الإلكتروني غير صحيحة');
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(message: 'لا يوجد اتصال بالانترنت');
+      } else {
+        throw CustomException(
+            message: 'فشل إنشاء المستخدم، يرجى المحاولة مرة أخرى');
+      }
+    } catch (e) {
+      throw CustomException(
+          message: 'فشل إنشاء المستخدم، يرجى المحاولة مرة أخرى');
+    }
+  }
 }
