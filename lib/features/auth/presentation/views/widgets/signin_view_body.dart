@@ -11,14 +11,14 @@ import 'package:fruites_e_commerce/features/auth/presentation/views/widgets/soci
 import 'package:fruites_e_commerce/features/auth/presentation/views/widgets/dont_have_an_account.dart';
 import 'package:fruites_e_commerce/features/auth/presentation/views/widgets/or_divider.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+class SignInViewBody extends StatefulWidget {
+  const SignInViewBody({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<SignInViewBody> createState() => _SignInViewBodyState();
 }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
+class _SignInViewBodyState extends State<SignInViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   late String email, password;
@@ -97,7 +97,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               SocialLoginButton(
                 socialName: 'تسجيل بواسطة فيسبوك',
                 socialImage: Assets.imagesFacebookImage,
-                onTap: () {},
+                onTap: () {
+                  context.read<SigninCubit>().signInFacebook();
+                },
               ),
             ],
           ),

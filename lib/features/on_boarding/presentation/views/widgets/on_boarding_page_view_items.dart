@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruites_e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:fruites_e_commerce/core/utils/app_text_styles.dart';
-import 'package:fruites_e_commerce/features/auth/presentation/views/login_view.dart';
+import 'package:fruites_e_commerce/features/auth/presentation/views/signin_view.dart';
 
 class OnBoardingPageViewItems extends StatelessWidget {
   const OnBoardingPageViewItems(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruites_e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:fruites_e_commerce/core/utils/app_images.dart';
-import 'package:fruites_e_commerce/features/auth/presentation/views/login_view.dart';
+import 'package:fruites_e_commerce/features/auth/presentation/views/signin_view.dart';
 import 'package:fruites_e_commerce/features/on_boarding/presentation/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
