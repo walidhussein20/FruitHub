@@ -89,12 +89,6 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               ),
               SizedBox(height: 16),
               SocialLoginButton(
-                socialName: 'تسجيل بواسطة أبل',
-                socialImage: Assets.imagesAppleImage,
-                onTap: () {},
-              ),
-              SizedBox(height: 16),
-              SocialLoginButton(
                 socialName: 'تسجيل بواسطة فيسبوك',
                 socialImage: Assets.imagesFacebookImage,
                 onTap: () {
