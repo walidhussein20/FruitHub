@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:fruites_e_commerce/features/auth/domain/repos/auth_repo.dart';
-import 'package:fruites_e_commerce/features/auth/presentation/cubits/cubit/signin_state.dart';
+import 'package:fruites_e_commerce/features/auth/presentation/cubits/signin_cubit/signin_state.dart';
 
 class SigninCubit extends Cubit<SigninState> {
   SigninCubit(this.authRepo) : super(SigninInitial());

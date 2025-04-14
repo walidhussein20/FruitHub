@@ -6,7 +6,7 @@ import 'package:fruites_e_commerce/core/utils/app_text_styles.dart';
 import 'package:fruites_e_commerce/core/widgets/custom_button.dart';
 import 'package:fruites_e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:fruites_e_commerce/core/widgets/password_field.dart';
-import 'package:fruites_e_commerce/features/auth/presentation/cubits/cubit/signin_cubit.dart';
+import 'package:fruites_e_commerce/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruites_e_commerce/features/auth/presentation/views/widgets/social_login_button.dart';
 import 'package:fruites_e_commerce/features/auth/presentation/views/widgets/dont_have_an_account.dart';
 import 'package:fruites_e_commerce/features/auth/presentation/views/widgets/or_divider.dart';

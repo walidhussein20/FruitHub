@@ -4,7 +4,7 @@ import 'package:fruites_e_commerce/core/services/get_it_services.dart';
 
 import 'package:fruites_e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:fruites_e_commerce/features/auth/domain/repos/auth_repo.dart';
-import 'package:fruites_e_commerce/features/auth/presentation/cubits/cubit/signin_cubit.dart';
+import 'package:fruites_e_commerce/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 
 import 'package:fruites_e_commerce/features/auth/presentation/views/widgets/signin_view_body_bloc_consumer.dart';
 
