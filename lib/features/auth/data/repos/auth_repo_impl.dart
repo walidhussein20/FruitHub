@@ -54,7 +54,8 @@ class AuthRepoImpl extends AuthRepo {
     try {
       var user = await firebaseAuthServices.signInWithEmailAndPassword(
           email: email, password: password);
-      return Right(UserModel.fromFirebase(user));
+      var userEntity = await getUserData(uId: user.uid);
+      return Right(userEntity);
     } on CustomException catch (e) {
       return left(serverFailure(e.message));
     } catch (e) {
@@ -71,7 +72,14 @@ class AuthRepoImpl extends AuthRepo {
     try {
       user = await firebaseAuthServices.signInWithGoogle();
       var userEntity = UserModel.fromFirebase(user);
-      adduserData(user: userEntity);
+      var isUserExist = await databaseService.checkIfDataExists(
+          path: BackendEndpoint.isUserEsists, documentId: user.uid);
+      if (isUserExist) {
+        getUserData(uId: user.uid);
+      } else {
+        adduserData(user: userEntity);
+      }
+
       return Right(userEntity);
     } catch (e) {
       await deletUser(user);
@@ -88,7 +96,14 @@ class AuthRepoImpl extends AuthRepo {
     try {
       user = await firebaseAuthServices.signInWithFacebook();
       var userEntity = UserModel.fromFirebase(user);
-      adduserData(user: userEntity);
+      var isUserExist = await databaseService.checkIfDataExists(
+          path: BackendEndpoint.isUserEsists, documentId: user.uid);
+      if (isUserExist) {
+        getUserData(uId: user.uid);
+      } else {
+        adduserData(user: userEntity);
+      }
+
       return Right(userEntity);
     } catch (e) {
       await deletUser(user);
@@ -102,6 +117,16 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future adduserData({required UserEntity user}) async {
     await databaseService.addData(
-        data: user.tomap(), path: BackendEndpoint.addUserData);
+      data: user.tomap(),
+      path: BackendEndpoint.addUserData,
+      documentId: user.uId,
+    );
+  }
+
+  @override
+  Future<UserEntity> getUserData({required String uId}) async {
+    var userData = await databaseService.getData(
+        path: BackendEndpoint.getUserData, documentId: uId);
+    return UserModel.fromJson(userData);
   }
 }
