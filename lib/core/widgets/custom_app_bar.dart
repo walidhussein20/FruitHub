@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruites_e_commerce/core/utils/app_text_styles.dart';
 
-AppBar buildAppBar(context, {required String title}) {
+AppBar buildAppBar(context, {required String title, IconData? icon}) {
   return AppBar(
     backgroundColor: Colors.white,
     centerTitle: true,
@@ -17,5 +17,11 @@ AppBar buildAppBar(context, {required String title}) {
       title,
       style: TextStyles.bold19,
     ),
+    actions: [
+      IconButton(
+        icon: Icon(icon),
+        onPressed: () {},
+      )
+    ],
   );
 }
