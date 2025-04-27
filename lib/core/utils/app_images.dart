@@ -26,6 +26,14 @@ class Assets {
   /// assets/images/google_image.svg
   static const String imagesGoogleImage = "assets/images/google_image.svg";
 
+  /// Assets for imagesHome
+  /// assets/images/home.svg
+  static const String imagesHome = "assets/images/home.svg";
+
+  /// Assets for imagesHomeSelected
+  /// assets/images/home_selected.svg
+  static const String imagesHomeSelected = "assets/images/home_selected.svg";
+
   /// Assets for imagesLogo
   /// assets/images/logo.svg
   static const String imagesLogo = "assets/images/logo.svg";
@@ -54,6 +62,14 @@ class Assets {
   /// assets/images/plant.svg
   static const String imagesPlant = "assets/images/plant.svg";
 
+  /// Assets for imagesProducts
+  /// assets/images/products.svg
+  static const String imagesProducts = "assets/images/products.svg";
+
+  /// Assets for imagesProductsSelected
+  /// assets/images/products_selected.svg
+  static const String imagesProductsSelected = "assets/images/products_selected.svg";
+
   /// Assets for imagesProfileImage
   /// assets/images/profile_image.png
   static const String imagesProfileImage = "assets/images/profile_image.png";
@@ -66,6 +82,14 @@ class Assets {
   /// assets/images/setting.svg
   static const String imagesSetting = "assets/images/setting.svg";
 
+  /// Assets for imagesShoppingCart
+  /// assets/images/shopping-cart.svg
+  static const String imagesShoppingCart = "assets/images/shopping-cart.svg";
+
+  /// Assets for imagesShoppingCartSelected
+  /// assets/images/shopping-cart_selected.svg
+  static const String imagesShoppingCartSelected = "assets/images/shopping-cart_selected.svg";
+
   /// Assets for imagesSplashButtom
   /// assets/images/splash_buttom.svg
   static const String imagesSplashButtom = "assets/images/splash_buttom.svg";
@@ -73,5 +97,13 @@ class Assets {
   /// Assets for imagesTest
   /// assets/images/test.png
   static const String imagesTest = "assets/images/test.png";
+
+  /// Assets for imagesUser
+  /// assets/images/user.svg
+  static const String imagesUser = "assets/images/user.svg";
+
+  /// Assets for imagesUserSelected
+  /// assets/images/user_selected.svg
+  static const String imagesUserSelected = "assets/images/user_selected.svg";
 }
 
